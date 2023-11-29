@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .film_name {
+            margin-top: 38vh;
+            font-size: 50px;
+        }
+
+        .empty {
+            height: 28vh;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            padding-bottom: 50px;
+            background-color: black;
+            color: white;
+        }
+
+        /* Heading */
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 50px;
+        }
+
+        h2 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        #video-container {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            max-width: 1500px;
+        }
+
+        #video-player {
+            display: block;
+            width: 100%;
+        }
+
+        #button-link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+        }
+
+        .video-button {
+            padding: 20px 30px;
+            background-color: white;
+            color: purple;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 50px;
+            display: none;
+        }
+
+        .navbar a {
+            color: purple;
+            text-decoration: none;
+            font-size: 25px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video-container">
+        <video id="video-player" controls onended="showButton()">
+            <source src="./videos/Scene1-7.mp4" type="video/mp4">
+        </video>
+        <a href="index_2.html#video-container" id="button-link">
+            <button class="video-button">Are you sure you want to continue? </button>
+            <br><br>
+            <button class="video-button">Are you sure you want to continue22? </button>
+        </a>
+    </div>
+
+    <script>
+        function showButton() {
+            var buttons = document.querySelectorAll('.video-button');
+            buttons.forEach(function (button) {
+                button.style.display = 'block';
+            });
+        }
+
+        var buttons = document.querySelectorAll('.video-button');
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                window.location.href = 'index_2.html#video-container';
+            });
+        });
+    </script>
+</body>
+
+</html>
